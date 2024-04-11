@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ghngvmdvcggw"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_xqweg"]
+[ext_resource type="PackedScene" uid="uid://cfwbur4y0abe1" path="res://character_body_2d.tscn" id="2_pbatf"]
+
+[sub_resource type="TileSet" id="TileSet_l3ch4"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_xqweg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 641.0
+color = Color(0.270588, 0.466667, 0.364706, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_pbatf")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_l3ch4")
+format = 2
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(500, 400)
